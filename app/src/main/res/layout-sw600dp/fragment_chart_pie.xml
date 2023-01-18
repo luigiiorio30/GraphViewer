@@ -5,33 +5,31 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:orientation="horizontal"
-    tools:context=".fragment.BarFragment">
-
+    tools:context=".fragment.PieFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/title_bar"
+            android:id="@+id/title_pie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
+            android:text="@string/pie_chart"
             android:textAlignment="center"
-            android:text="@string/bar_chart"
             android:textAppearance="?attr/textAppearanceBody2"
-            android:textSize="20sp"
+            android:textSize="35sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Bar Chart" />
+            tools:text="Pie Chart" />
 
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/bar_graphic"
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pie_graphic"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_bar"/>
+            app:layout_constraintTop_toBottomOf="@+id/title_pie" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>
