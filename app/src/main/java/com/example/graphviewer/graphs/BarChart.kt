@@ -66,7 +66,6 @@ class BarChart(private val barChartView: BarChart, private val barContext: Conte
     private fun getBarChartData() {
         barEntriesList = ArrayList()
 
-        barDataSet = BarDataSet(barEntriesList, "Data Set")
         barEntriesList.add(BarEntry(0f, 30f))
         barEntriesList.add(BarEntry(1f, 60f))
         barEntriesList.add(BarEntry(2f, 45f))
