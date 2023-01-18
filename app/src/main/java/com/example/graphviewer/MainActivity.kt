@@ -12,13 +12,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        val pieChartView = findViewById<PieChart>(R.id.radar_graphic)
-        val pie = com.example.graphviewer.graphs.PieChart(pieChartView,this.applicationContext)
-        pie.setPieChartData()
-
-        val radarChartView = findViewById<RadarChart>(R.id.radar_graphic)
-        val radar = com.example.graphviewer.graphs.RadarChart(radarChartView,this.applicationContext)
-        radar.setRadarChartData()
     }
 }

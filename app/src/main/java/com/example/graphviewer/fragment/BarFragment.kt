@@ -6,17 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.graphviewer.R
-import com.example.graphviewer.databinding.FragmentChartRadarBinding
-import com.github.mikephil.charting.charts.RadarChart
+import com.example.graphviewer.databinding.FragmentChartBarBinding
+import com.github.mikephil.charting.charts.BarChart
 
 /**
  * A simple [Fragment] subclass.
- * Use the [RadarChartFragment.newInstance] factory method to
+ * Use the [BarChartFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class RadarFragment : Fragment() {
+class BarFragment : Fragment() {
 
-    private var _binding: FragmentChartRadarBinding? = null
+    private var _binding: FragmentChartBarBinding? = null
 
     private val binding get() = _binding!!
 
@@ -25,15 +25,15 @@ class RadarFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding = FragmentChartRadarBinding.inflate(inflater, container, false)
+        _binding = FragmentChartBarBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val radarChartView = view.findViewById<RadarChart>(R.id.radar_graphic)
-        val radar = context?.let { com.example.graphviewer.graphs.RadarChart(radarChartView, it) }
-        with(radar) {
-            this?.setRadarChartData()
+        val barChartView = view.findViewById<BarChart>(R.id.bar_graphic)
+        val bar = context?.let { com.example.graphviewer.graphs.BarChart(barChartView, it) }
+        with(bar) {
+            this?.setBarChartData()
         }
     }
 

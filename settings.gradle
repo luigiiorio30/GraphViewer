@@ -13,5 +13,5 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "Viewing Graphs"
+rootProject.name = "Graph Viewer"
 include ':app'

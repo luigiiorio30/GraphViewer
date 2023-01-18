@@ -23,14 +23,14 @@ class PieFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentChartPieBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val pieChartView = view.findViewById<PieChart>(R.id.pie_chart)
+        val pieChartView = view.findViewById<PieChart>(R.id.pie_graphic)
         val pie = context?.let { com.example.graphviewer.graphs.PieChart(pieChartView, it) }
         with(pie) {
             this?.setPieChartData()

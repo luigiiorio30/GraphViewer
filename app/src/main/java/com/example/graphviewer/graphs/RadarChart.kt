@@ -19,8 +19,9 @@ class RadarChart(private val radarChartView: RadarChart, private val radarContex
     lateinit var radarEntriesList: ArrayList<RadarEntry>
 
     fun setRadarChartData() {
+        radarData = RadarData()
         getRadarChartData()
-        radarChart = radarChartView.findViewById(R.id.pie_graphic)
+        radarChart = radarChartView.findViewById(R.id.radar_graphic)
 
         radarChart.webLineWidth = 1f
         radarChart.webColor = Color.LTGRAY
@@ -33,7 +34,7 @@ class RadarChart(private val radarChartView: RadarChart, private val radarContex
         xAxis.yOffset = 0f
         xAxis.xOffset = 0f
         xAxis.valueFormatter = object : ValueFormatter() {
-            private val mActivities = arrayOf("Data 1", "Data 2", "Data 3")
+            private val mActivities = arrayOf("Data 1", "Data 2", "Data 3", "Data 4", "Data 5")
 
             override fun getFormattedValue(value: Float): String {
                 return mActivities[value.toInt() % mActivities.size]
@@ -48,9 +49,8 @@ class RadarChart(private val radarChartView: RadarChart, private val radarContex
         yAxis.axisMaximum = 80f
         yAxis.setDrawLabels(false)
 
-        radarDataSet = RadarDataSet(radarEntriesList, "Data Set")
         radarDataSet.color = Color.BLACK
-        radarDataSet.fillColor = Color.BLACK
+        radarDataSet.fillColor = Color.RED
         radarDataSet.setDrawFilled(true)
         radarDataSet.fillAlpha = 180
         radarDataSet.lineWidth = 2f
@@ -58,6 +58,7 @@ class RadarChart(private val radarChartView: RadarChart, private val radarContex
 
         val sets: MutableList<IRadarDataSet> = ArrayList()
         sets.add(radarDataSet)
+        radarData = RadarData(radarDataSet)
         radarChart.data = radarData
         radarChart.description.isEnabled = false
         radarChart.legend.isEnabled = false
@@ -72,8 +73,12 @@ class RadarChart(private val radarChartView: RadarChart, private val radarContex
 
     private fun getRadarChartData() {
         radarEntriesList = ArrayList()
+
+        radarDataSet = RadarDataSet(radarEntriesList, "Data Set")
         radarEntriesList.add(RadarEntry(70f))
         radarEntriesList.add(RadarEntry(60f))
         radarEntriesList.add(RadarEntry(50f))
+        radarEntriesList.add(RadarEntry(85f))
+        radarEntriesList.add(RadarEntry(100f))
     }
 }

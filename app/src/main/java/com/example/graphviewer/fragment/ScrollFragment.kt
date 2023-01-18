@@ -28,7 +28,7 @@ class ScrollFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val pager: ViewPager = binding.pager
 
-        pager.offscreenPageLimit = 2
+        pager.offscreenPageLimit = 3
         pager.adapter = PageAdapter(activity?.supportFragmentManager)
     }
 
@@ -40,13 +40,14 @@ class ScrollFragment : Fragment() {
             when (position) {
                 0 -> fragment = RadarFragment()
                 1 -> fragment = PieFragment()
+                2 -> fragment = BarFragment()
                 else -> fragment = RadarFragment()
             }
             return fragment
         }
 
         override fun getCount(): Int {
-            return 2
+            return 3
         }
     }
 
