@@ -19,6 +19,7 @@ class RadarChart(private val radarChartView: RadarChart, private val radarContex
     lateinit var radarEntriesList: ArrayList<RadarEntry>
 
     fun setRadarChartData() {
+        radarEntriesList = ArrayList()
         radarData = RadarData()
         getRadarChartData()
         radarChart = radarChartView.findViewById(R.id.radar_graphic)
