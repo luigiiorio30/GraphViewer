@@ -6,7 +6,7 @@ import kotlin.collections.ArrayList
 class PieChartDataSet(private val dataList: List<Int>) {
 
     fun setDataPieChart(): ArrayList<PieEntry> {
-        val dataPie = dataList
+        val dataPie = dataList.shuffled().take(((2..7).random()))
         val entries: ArrayList<PieEntry> = ArrayList()
         for (i in dataPie.indices) {
             entries.add(PieEntry(dataPie[i].toFloat()))

@@ -9,7 +9,6 @@ import com.example.graphviewer.R
 import com.example.graphviewer.dataSet.PieChartDataSet
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.PieChart
-import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
@@ -21,21 +20,9 @@ class PieChart(private val pieChartView: PieChart, private val pieContext: Conte
     var setData = PieChartDataSet(dataList)
 
     lateinit var pieChart: PieChart
-    lateinit var pieData: PieData
-    lateinit var pieDataSet: PieDataSet
-    lateinit var pieEntriesList: ArrayList<PieEntry>
 
     @SuppressLint("ResourceType")
     fun setPieChartData() {
-
-        val legend = pieChart.legend
-        legend.textSize = 12f
-        legend.form = Legend.LegendForm.CIRCLE
-
-        pieDataSet.colors = listOf(YELLOW, RED, BLUE, GREEN, GRAY)
-        pieDataSet.valueTextSize = 12f
-        pieDataSet.sliceSpace = 3f
-        pieDataSet.valueFormatter = PercentFormatter()
 
         pieChart = pieChartView.findViewById(R.id.pie_graphic)
         pieChart.setUsePercentValues(true)
@@ -66,12 +53,12 @@ class PieChart(private val pieChartView: PieChart, private val pieContext: Conte
         dataSet.selectionShift = 5f
 
         val colors: ArrayList<Int> = ArrayList()
-        colors.add(pieContext.resources.getColor(RED))
-        colors.add(pieContext.resources.getColor(GREEN))
-        colors.add(pieContext.resources.getColor(BLUE))
-        colors.add(pieContext.resources.getColor(GRAY))
-        colors.add(pieContext.resources.getColor(YELLOW))
-        colors.add(pieContext.resources.getColor(YELLOW))
+        colors.add(pieContext.resources.getColor(R.color.red))
+        colors.add(pieContext.resources.getColor(R.color.green))
+        colors.add(pieContext.resources.getColor(R.color.blue))
+        colors.add(pieContext.resources.getColor(R.color.sky_blue))
+        colors.add(pieContext.resources.getColor(R.color.yellow))
+        colors.add(pieContext.resources.getColor(R.color.pink))
         dataSet.colors = colors
 
         val data = PieData(dataSet)
