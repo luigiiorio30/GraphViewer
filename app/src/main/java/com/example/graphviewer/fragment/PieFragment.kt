@@ -44,19 +44,19 @@ class PieFragment : Fragment() {
                     pieChartView,
                     it,
                     viewModel.getDataPie()
+
                 )
             }
             with(pie) {
                 this?.setPieChartData()
+                val legend = pieChartView.legend
+                legend.form = Legend.LegendForm.CIRCLE
+                legend.formSize = 20f
+                legend.textColor = Color.BLACK
+                legend.textSize = 18f
+                legend.xEntrySpace = 5f
+                legend.isEnabled = true
             }
-            val legend = pieChartView.legend
-            legend.form = Legend.LegendForm.CIRCLE
-            legend.formSize = 20f
-            legend.textColor = Color.BLACK
-            legend.textSize = 18f
-            legend.xEntrySpace = 5f
-            legend.yEntrySpace = 5f
-            legend.isEnabled = true
         }
         viewModel.pie.observe(viewLifecycleOwner, observer)
     }
