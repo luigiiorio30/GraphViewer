@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".fragment.ScrollFragment">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/radar_button"
+            android:layout_margin="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Radar"
+            android:onClick="onRadarClick"/>
+
+        <Button
+            android:id="@+id/pie_button"
+            android:layout_width="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_height="wrap_content"
+            android:onClick="onPieClick"
+            android:text="Pie" />
+
+        <Button
+            android:id="@+id/bar_button"
+            android:layout_width="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_height="wrap_content"
+            android:text="Bar"
+            android:onClick="onBarClick"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,13 +1,11 @@
 package com.example.graphviewer.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-import androidx.viewpager.widget.ViewPager
+import androidx.fragment.app.Fragment
+import com.example.graphviewer.R
 import com.example.graphviewer.databinding.FragmentScrollViewBinding
 
 class ScrollFragment : Fragment() {
@@ -26,31 +24,24 @@ class ScrollFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val pager: ViewPager = binding.pager
 
-        pager.offscreenPageLimit = 3
-        pager.adapter = PageAdapter(activity?.supportFragmentManager)
-    }
-
-
-    private class PageAdapter(fm: FragmentManager?) :
-        FragmentPagerAdapter(fm!!) {
-        override fun getItem(position: Int): Fragment {
-            var fragment: Fragment = RadarFragment()
-            when (position) {
-                0 -> fragment = RadarFragment()
-                1 -> fragment = PieFragment()
-                2 -> fragment = BarFragment()
-                else -> fragment = RadarFragment()
-            }
-            return fragment
+        binding.radarButton.setOnClickListener {
+            val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
+            fragmentTransaction?.replace(R.id.fragment_container, RadarFragment())
+            fragmentTransaction?.addToBackStack(null)
+            fragmentTransaction?.commit()
         }
-
-        override fun getCount(): Int {
-            return 3
+        binding.pieButton.setOnClickListener {
+            val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
+            fragmentTransaction?.replace(R.id.fragment_container, PieFragment())
+            fragmentTransaction?.addToBackStack(null)
+            fragmentTransaction?.commit()
+        }
+        binding.barButton.setOnClickListener {
+            val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
+            fragmentTransaction?.replace(R.id.fragment_container, BarFragment())
+            fragmentTransaction?.addToBackStack(null)
+            fragmentTransaction?.commit()
         }
     }
-
-
-
 }
