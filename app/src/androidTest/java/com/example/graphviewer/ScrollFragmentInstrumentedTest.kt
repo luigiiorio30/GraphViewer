@@ -20,8 +20,28 @@ class ScrollFragmentTest {
         clickId(R.id.radar_button)
         Thread.sleep(500)
         clickId(R.id.pie_button)
-        Thread.sleep(500)
-        clickId(R.id.radar_button)
+        Thread.sleep(1000)
+        clickId(R.id.bar_button)
         Thread.sleep(4000)
     }
+
+    @Test
+    fun check_if_charts_are_visible (){
+        enableWifi(true)
+        enableCellularData(true)
+        Thread.sleep(500)
+        clickId(R.id.radar_button)
+        Thread.sleep(500)
+        checkIfVisible(R.id.radar_graphic) //check
+        Thread.sleep(500)
+        clickId(R.id.pie_button)
+        Thread.sleep(500)
+        checkIfVisible(R.id.pie_graphic) // check
+        Thread.sleep(500)
+        clickId(R.id.bar_button)
+        Thread.sleep(500)
+        checkIfVisible(R.id.bar_graphic)
+        Thread.sleep(4000)
+    }
+
 }

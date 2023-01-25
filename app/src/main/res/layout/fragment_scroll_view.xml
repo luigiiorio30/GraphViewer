@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,32 +12,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/radar_button"
-            android:layout_margin="2dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Radar"
-            android:onClick="onRadarClick"/>
+            android:layout_margin="2dp"
+            android:onClick="onRadarClick"
+            android:text="Radar" />
 
         <Button
             android:id="@+id/pie_button"
             android:layout_width="wrap_content"
-            android:layout_margin="2dp"
             android:layout_height="wrap_content"
+            android:layout_margin="2dp"
             android:onClick="onPieClick"
             android:text="Pie" />
 
         <Button
             android:id="@+id/bar_button"
             android:layout_width="wrap_content"
-            android:layout_margin="2dp"
             android:layout_height="wrap_content"
-            android:text="Bar"
-            android:onClick="onBarClick"/>
+            android:layout_margin="2dp"
+            android:onClick="onBarClick"
+            android:text="Bar" />
 
     </LinearLayout>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/info_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="Test"
+        android:visibility="gone"
+        android:textAllCaps="true"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Test" />
+</androidx.constraintlayout.widget.ConstraintLayout>
