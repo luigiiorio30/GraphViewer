@@ -40,6 +40,16 @@
             android:onClick="onBarClick"
             android:text="Bar" />
 
+        <Button
+            android:id="@+id/del_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:onClick="onPieClick"
+            android:text="Del all" />
+
+
+
     </LinearLayout>
 
     <TextView

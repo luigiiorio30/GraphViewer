@@ -43,5 +43,8 @@ class ScrollFragment : Fragment() {
             fragmentTransaction?.addToBackStack(null)
             fragmentTransaction?.commit()
         }
+        binding.delButton.setOnClickListener {
+
+        }
     }
 }
