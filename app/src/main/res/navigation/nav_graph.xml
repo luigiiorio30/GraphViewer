@@ -3,8 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph.xml"
     app:startDestination="@id/scrollFragment">
+
     <fragment
         android:id="@+id/scrollFragment"
         android:name="com.example.graphviewer.fragment.ScrollFragment"
-        android:label="ScrollFragment" />
+        android:label="ScrollFragment"
+        app:destination="@id/scrollFragment" />
 </navigation>
