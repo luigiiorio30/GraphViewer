@@ -29,24 +29,33 @@ class ScrollFragment : Fragment() {
             val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
             fragmentTransaction?.replace(R.id.fragment_container, RadarFragment())
             fragmentTransaction?.addToBackStack(null)
+            binding.infoText.visibility= View.INVISIBLE
+            binding.imageAlert.visibility= View.INVISIBLE
             fragmentTransaction?.commit()
         }
         binding.pieButton.setOnClickListener {
             val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
             fragmentTransaction?.replace(R.id.fragment_container, PieFragment())
             fragmentTransaction?.addToBackStack(null)
+            binding.infoText.visibility= View.INVISIBLE
+            binding.imageAlert.visibility= View.INVISIBLE
             fragmentTransaction?.commit()
         }
         binding.barButton.setOnClickListener {
             val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
             fragmentTransaction?.replace(R.id.fragment_container, BarFragment())
             fragmentTransaction?.addToBackStack(null)
+            binding.infoText.visibility= View.INVISIBLE
+            binding.imageAlert.visibility= View.INVISIBLE
+
             fragmentTransaction?.commit()
         }
         binding.delButton.setOnClickListener {
             val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
             activity?.supportFragmentManager?.findFragmentById(R.id.fragment_container)
                 ?.let { it1 -> fragmentTransaction?.remove(it1) }
+            binding.infoText.visibility= View.VISIBLE
+            binding.imageAlert.visibility= View.VISIBLE
             fragmentTransaction?.commit()
         }
     }

@@ -3,4 +3,9 @@
     <string name="radar_chart">Radar Chart</string>
     <string name="pie_chart">Pie Chart</string>
     <string name="bar_chart">Bar Chart</string>
+    <string name="pie">Pie</string>
+    <string name="radar">Radar</string>
+    <string name="bar">Bar</string>
+    <string name="del_all">Delete</string>
+    <string name="no_graph_selected">No graph selected</string>
 </resources>
