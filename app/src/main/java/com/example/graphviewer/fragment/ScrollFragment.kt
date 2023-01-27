@@ -44,7 +44,10 @@ class ScrollFragment : Fragment() {
             fragmentTransaction?.commit()
         }
         binding.delButton.setOnClickListener {
-
+            val fragmentTransaction = activity?.supportFragmentManager?.beginTransaction()
+            activity?.supportFragmentManager?.findFragmentById(R.id.fragment_container)
+                ?.let { it1 -> fragmentTransaction?.remove(it1) }
+            fragmentTransaction?.commit()
         }
     }
 }

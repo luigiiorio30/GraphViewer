@@ -36,5 +36,4 @@ class BarFragment : Fragment() {
             this?.setBarChartData()
         }
     }
-
 }

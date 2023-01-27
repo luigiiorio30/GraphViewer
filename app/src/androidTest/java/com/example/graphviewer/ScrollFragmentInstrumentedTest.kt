@@ -43,5 +43,4 @@ class ScrollFragmentTest {
         checkIfVisible(R.id.bar_graphic)
         Thread.sleep(4000)
     }
-
 }
