@@ -8,4 +8,5 @@
     <string name="bar">Bar</string>
     <string name="del_all">Delete</string>
     <string name="no_graph_selected">No graph selected</string>
+    <string name="start_graph_selected">Select a graph</string>
 </resources>

@@ -31,6 +31,8 @@ class ScrollFragment : Fragment() {
             fragmentTransaction?.addToBackStack(null)
             binding.infoText.visibility= View.INVISIBLE
             binding.imageAlert.visibility= View.INVISIBLE
+            binding.welcome.visibility= View.INVISIBLE
+            binding.imageWelcome.visibility= View.INVISIBLE
             fragmentTransaction?.commit()
         }
         binding.pieButton.setOnClickListener {
@@ -39,6 +41,8 @@ class ScrollFragment : Fragment() {
             fragmentTransaction?.addToBackStack(null)
             binding.infoText.visibility= View.INVISIBLE
             binding.imageAlert.visibility= View.INVISIBLE
+            binding.welcome.visibility= View.INVISIBLE
+            binding.imageWelcome.visibility= View.INVISIBLE
             fragmentTransaction?.commit()
         }
         binding.barButton.setOnClickListener {
@@ -47,7 +51,8 @@ class ScrollFragment : Fragment() {
             fragmentTransaction?.addToBackStack(null)
             binding.infoText.visibility= View.INVISIBLE
             binding.imageAlert.visibility= View.INVISIBLE
-
+            binding.welcome.visibility= View.INVISIBLE
+            binding.imageWelcome.visibility= View.INVISIBLE
             fragmentTransaction?.commit()
         }
         binding.delButton.setOnClickListener {
@@ -56,6 +61,8 @@ class ScrollFragment : Fragment() {
                 ?.let { it1 -> fragmentTransaction?.remove(it1) }
             binding.infoText.visibility= View.VISIBLE
             binding.imageAlert.visibility= View.VISIBLE
+            binding.welcome.visibility= View.INVISIBLE
+            binding.imageWelcome.visibility= View.INVISIBLE
             fragmentTransaction?.commit()
         }
     }

@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
-        android:onClick="onPieClick"
+        android:onClick="onDelClick"
         android:text="@string/del_all"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/graph_alert"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,8 +72,33 @@
         android:text="@string/no_graph_selected"
         android:textAllCaps="true"
         android:textAppearance="?attr/textAppearanceHeadline6"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/image_alert"
         app:layout_constraintStart_toStartOf="@+id/image_alert"
         app:layout_constraintTop_toBottomOf="@+id/image_alert" />
+
+    <ImageView
+        android:id="@+id/image_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/multi_select"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/start_graph_selected"
+        android:textAllCaps="true"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/image_welcome"
+        app:layout_constraintStart_toStartOf="@+id/image_welcome"
+        app:layout_constraintTop_toBottomOf="@+id/image_welcome" />
 </androidx.constraintlayout.widget.ConstraintLayout>
